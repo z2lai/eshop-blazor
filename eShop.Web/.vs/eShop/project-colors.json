@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "1fb11452-f142-4aa2-a3cc-e0ddedfe857f": {
+      "ProjectGuid": "1fb11452-f142-4aa2-a3cc-e0ddedfe857f",
+      "DisplayName": "eShop.CoreBusiness",
+      "ColorIndex": 0
+    },
+    "c68ca023-1fb7-480a-85bc-8cd738a96613": {
+      "ProjectGuid": "c68ca023-1fb7-480a-85bc-8cd738a96613",
+      "DisplayName": "MyFirstBlazorApp",
+      "ColorIndex": 1
+    },
+    "705b25f2-c8fe-4199-88e7-cdd41787ee20": {
+      "ProjectGuid": "705b25f2-c8fe-4199-88e7-cdd41787ee20",
+      "DisplayName": "eShop.UseCases",
+      "ColorIndex": 2
+    },
+    "dcc1e65d-a313-445f-bbcf-124a08f40f6e": {
+      "ProjectGuid": "dcc1e65d-a313-445f-bbcf-124a08f40f6e",
+      "DisplayName": "eShop.DataStore.HardCoded",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 4
+}
