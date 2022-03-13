@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace eShop.UseCases.SearchProductScreen
+namespace eShop.UseCases.ViewProductScreen
 {
     public class ViewProduct : IViewProduct
     {
