@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using eShop.DataStore.HardCoded;
 using eShop.UseCases.PluginInterfaces.DataStore;
 using eShop.UseCases.SearchProductScreen;
@@ -37,6 +33,7 @@ namespace eShop.Web
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<ISearchProduct, SearchProduct>();
             services.AddTransient<IViewProduct, ViewProduct>();
+            services.AddScoped<IAddProductToCartUseCase, AddProductToCartUseCase>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,6 +1,7 @@
 ﻿@page "/product/{id:int}"
 
 @inject IViewProduct viewProduct
+@inject IAddProductToCartUseCase addProductToCartUseCase
 
 <h3>Product Details</h3>
 
@@ -14,6 +15,7 @@
             Price: <label style="color:darkred">@product.Price.ToString("c")</label>
         </p>
         <p class="card-text">@product.Description</p>
+        <button type="button" @onclick=AddToCart>Order Product</button>
     </div>
 </div>
 <br/>
@@ -31,9 +33,11 @@
 
         if (Id > 0)
             product = viewProduct.Execute(Id);
-
     }
 
-
+    protected void AddToCart()
+    {
+        addProductToCartUseCase.Execute(product.Id);
+    }
 
 }

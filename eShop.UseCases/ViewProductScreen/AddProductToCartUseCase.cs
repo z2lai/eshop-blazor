@@ -6,7 +6,7 @@ using System.Text;
 
 namespace eShop.UseCases.ViewProductScreen
 {
-    public class AddProductToCartUseCase
+    public class AddProductToCartUseCase : IAddProductToCartUseCase
     {
         private readonly IProductRepository productRepository;
         private readonly IShoppingCart shoppingCart;
