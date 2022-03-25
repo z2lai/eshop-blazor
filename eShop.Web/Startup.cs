@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using eShop.Web.Data;
 using eShop.UseCases.ViewProductScreen;
+using eShop.UseCases.PluginInterfaces.UI;
+using eShop.DataStore.LocalStorage;
 
 namespace eShop.Web
 {
@@ -30,10 +32,12 @@ namespace eShop.Web
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
 
-            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IAddProductToCartUseCase, AddProductToCartUseCase>();
+            services.AddScoped<IShoppingCart, ShoppingCart>();
+
             services.AddTransient<ISearchProduct, SearchProduct>();
             services.AddTransient<IViewProduct, ViewProduct>();
-            services.AddScoped<IAddProductToCartUseCase, AddProductToCartUseCase>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
