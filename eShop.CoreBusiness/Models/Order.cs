@@ -13,6 +13,7 @@ namespace eShop.CoreBusiness.Models
         }
 
         public int? OrderId { get; set; }
+        public string UniqueId { get; set; }
         public DateTime? DatePlaced { get; set; }
         public DateTime? DateProcessing { get; set; }
         public DateTime? DateProcessed { get; set; }
@@ -23,7 +24,6 @@ namespace eShop.CoreBusiness.Models
         public string CustomerCountry { get; set; }
         public string AdminUser { get; set; }
         public List<OrderLineItem> LineItems { get; set; }
-        public string UniqueId { get; set; }
 
         public void AddProduct(int productId, int qty, double price)
         {

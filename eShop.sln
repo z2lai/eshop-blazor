@@ -13,15 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShop.DataStore.HardCoded",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "eShop.Web.Modules", "eShop.Web.Modules", "{91D2DE73-0BAF-4FDA-95A9-E44FCB6C7B1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.Web.Common", "eShop.Web.Common\eShop.Web.Common.csproj", "{3D330159-E45A-47D1-94E4-9CAFE2EF2FE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShop.Web.Common", "eShop.Web.Common\eShop.Web.Common.csproj", "{3D330159-E45A-47D1-94E4-9CAFE2EF2FE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.Web.CustomerPortal", "eShop.Web.CustomerPortal\eShop.Web.CustomerPortal.csproj", "{2C029CD5-7494-4FB8-A7D4-D37847E0CB7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShop.Web.CustomerPortal", "eShop.Web.CustomerPortal\eShop.Web.CustomerPortal.csproj", "{2C029CD5-7494-4FB8-A7D4-D37847E0CB7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.Web.AdminPortal", "eShop.Web.AdminPortal\eShop.Web.AdminPortal.csproj", "{98AE3C51-D165-49D7-BE77-99050A182796}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShop.Web.AdminPortal", "eShop.Web.AdminPortal\eShop.Web.AdminPortal.csproj", "{98AE3C51-D165-49D7-BE77-99050A182796}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{68633BFA-EA88-4DF7-88E4-0C4E9F4872FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.DataStore.LocalStorage", "eShop.DataStore.LocalStorage\eShop.DataStore.LocalStorage.csproj", "{AC65CC63-11AB-4775-8946-82EA0966AB06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShop.DataStore.LocalStorage", "eShop.DataStore.LocalStorage\eShop.DataStore.LocalStorage.csproj", "{AC65CC63-11AB-4775-8946-82EA0966AB06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

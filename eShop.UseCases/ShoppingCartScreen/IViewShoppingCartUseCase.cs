@@ -1,7 +1,7 @@
 ﻿using eShop.CoreBusiness.Models;
 using System.Threading.Tasks;
 
-namespace eShop.UseCases
+namespace eShop.UseCases.ShoppingCartScreen
 {
     public interface IViewShoppingCartUseCase
     {

@@ -12,6 +12,7 @@ using eShop.Web.Data;
 using eShop.UseCases.ViewProductScreen;
 using eShop.UseCases.PluginInterfaces.UI;
 using eShop.DataStore.LocalStorage;
+using eShop.UseCases.ShoppingCartScreen;
 
 namespace eShop.Web
 {
@@ -33,11 +34,11 @@ namespace eShop.Web
             services.AddSingleton<WeatherForecastService>();
 
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ISearchProductUseCase, SearchProductUseCase>();
+            services.AddScoped<IViewProductUseCase, ViewProductUseCase>();
             services.AddScoped<IAddProductToCartUseCase, AddProductToCartUseCase>();
+            services.AddScoped<IViewShoppingCartUseCase, ViewShoppingCartUseCase>();
             services.AddScoped<IShoppingCart, ShoppingCart>();
-
-            services.AddTransient<ISearchProduct, SearchProduct>();
-            services.AddTransient<IViewProduct, ViewProduct>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

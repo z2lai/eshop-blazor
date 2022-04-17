@@ -1,0 +1,35 @@
+﻿@if (LineItem != null && LineItem.Product != null)
+{
+    <li class="row">
+        <div class="col">
+            <img src="@LineItem.Product.ImageLink" />
+        </div>
+        <div class="col">
+            <h5>@LineItem.Product.Name</h5>
+            <div>
+                <p>Quantity: @LineItem.Quantity</p>
+                <input type="number" min="0" value="@LineItem.Quantity" @oninput="HandleQuantityChange" />
+            </div>
+            <div class="mt-2">                
+                 Price:&nbsp;&nbsp;@LineItem.Product.Price.ToString("c")                
+            </div>
+        </div>
+        <div class="col">
+            <button class="btn btn-light">Delete</button>
+        </div>
+    </li>
+}
+
+
+@code {
+    [Parameter]
+    public OrderLineItem? LineItem { get; set; }
+
+    private void HandleQuantityChange(ChangeEventArgs e)
+    {
+        if (string.IsNullOrWhiteSpace(e.Value.ToString())) return;
+        int qty;
+        if (int.TryParse(e.Value.ToString(), out qty))
+            LineItem.Quantity = qty;
+    }
+}

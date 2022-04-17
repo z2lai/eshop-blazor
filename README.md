@@ -7,7 +7,7 @@ The orders should be placed in the order system allowing admin users to see the 
 ## Architecture
 Following Clean Architecture loosely and the Use Case Approach:
 - The Core Business project is the Domain layer
-- The Use Case project is the Application layer
+- The Use Case project is the Application layer - use cases are application services.
 - The Web.Modules folder and the Web project is the presentation layer
 - The Plugins folder is the persistence/infrastructure layer
 
@@ -65,5 +65,5 @@ Bonus:
 - Add more UI features/use cases for more interactivity
 
 ## Concerns/Questions:
-- When implementing the UI component for the **View Shopping Cart use case**, since we are using local storage and JSInterop in the IShoppingCart implementation, we need to call it in a specific lifecycle method of the Blazor component to ensure that the JSInterop is available. Is this considered as the presentation layer (higher-level module) having a direct dependency on implementation details (instead of the abstraction) of the persistence layer (lower-level module), which goes against Dependency Inversion principle of SOLID?
-    + If so, is this unavoidable because we are using Blazor which combines MVC all into one component? Or is this not considered a direct dependency since we don't actually have a code/project reference to the persistence layer?
+Q: When implementing the UI component for the **View Shopping Cart use case**, since we are using local storage and JSInterop in the IShoppingCart implementation (plugin), we need to call it in a specific lifecycle method of the Blazor component (presentation layer) to ensure that the JSInterop is available. Is this considered as the presentation layer (higher-level module) having a direct dependency on implementation details (instead of the abstraction) of the plugin (lower-level module), which goes against Dependency Inversion principle of SOLID?
+- A: This not considered an actual dependency since the code itself in the component does not contain any dependency on the shopping cart implementation. It merely receives the IShoppingCart interface (through DI) and uses the methods defined on the interface. In other words, there is no tight coupling between the UI code and shopping cart implementation as it does not use the concrete class directly (e.g. does not instantiate an object of the class) and does not need to be recompiled if the implementation changes.

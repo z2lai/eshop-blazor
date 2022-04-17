@@ -1,4 +1,5 @@
 ﻿using eShop.CoreBusiness.Models;
+using eShop.UseCases.PluginInterfaces.DataStore;
 using eShop.UseCases.PluginInterfaces.UI;
 using Microsoft.JSInterop;
 using Newtonsoft.Json;
@@ -8,15 +9,17 @@ namespace eShop.DataStore.LocalStorage
     public class ShoppingCart : IShoppingCart
     {
         private readonly IJSRuntime jSRuntime;
+        private readonly IProductRepository productRepository;
         private const string cstrShoppingCart = "eShop.ShoppingCart";
 
-        public ShoppingCart(IJSRuntime jSRuntime)
+        public ShoppingCart(IJSRuntime jSRuntime, IProductRepository productRepository)
         {
             this.jSRuntime = jSRuntime;
+            this.productRepository = productRepository;
         }
         public async Task<Order> AddProductAsync(Product product)
         {
-            Order order = await this.GetOrderFromLocalStorageAsync();
+            Order order = await GetOrderFromLocalStorageAsync();
             order.AddProduct(product.ProductId, 1, product.Price);
             await SetOrderInLocalStorageAsync(order);
             return order;
@@ -32,9 +35,10 @@ namespace eShop.DataStore.LocalStorage
             throw new NotImplementedException();
         }
 
-        public Task<Order> GetOrderAsync()
+        public async Task<Order> GetOrderAsync()
         {
-            throw new NotImplementedException();
+            Order order = await GetOrderFromLocalStorageAsync();
+            return order;
         }
 
         public Task<Order> PlaceOrderAsync()
@@ -55,6 +59,10 @@ namespace eShop.DataStore.LocalStorage
             if (!string.IsNullOrWhiteSpace(strOrder))
             {
                 order = JsonConvert.DeserializeObject<Order>(strOrder);
+                foreach (var lineItem in order.LineItems)
+                {
+                    lineItem.Product = productRepository.GetProduct(lineItem.ProductId);
+                }
             }
             else
             {

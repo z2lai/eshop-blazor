@@ -2,7 +2,7 @@
 using eShop.UseCases.PluginInterfaces.UI;
 using System.Threading.Tasks;
 
-namespace eShop.UseCases
+namespace eShop.UseCases.ShoppingCartScreen
 {
     public class ViewShoppingCartUseCase : IViewShoppingCartUseCase
     {

@@ -2,7 +2,7 @@
 
 namespace eShop.UseCases.ViewProductScreen
 {
-    public interface IViewProduct
+    public interface IViewProductUseCase
     {
         Product Execute(int id);
     }
